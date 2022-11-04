@@ -51,9 +51,9 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.GetComponent<Shootable>())
+        if(collider.GetComponent<Entity>() && collider.gameObject.layer != 3)
         {
-            collider.GetComponent<Shootable>().GetDamage(_bulletDamage);
+            collider.GetComponent<Entity>().TakeDamage(_bulletDamage);
             if(!_bulletPiercing)
             {
                 Destroy(this.gameObject);

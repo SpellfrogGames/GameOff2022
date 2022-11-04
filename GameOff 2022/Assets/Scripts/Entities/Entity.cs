@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shootable : MonoBehaviour
+public class Entity : MonoBehaviour
 {
     public float health = 1.0f;
+    public float damage = 0.0f;
 
-    public void GetDamage(float damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         Debug.Log("Get Damage: " + damage);
@@ -17,7 +18,7 @@ public class Shootable : MonoBehaviour
         }
     }
 
-    void Death()
+    public virtual void Death()
     {
         Debug.Log("I "+ name + " dieded");
         Destroy(this.gameObject);

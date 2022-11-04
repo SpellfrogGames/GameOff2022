@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeedModifier = 0.0f;
     public float moveSpeed;
 
-    Vector2 movement;
+    Vector2 moveDirection;
     Vector2 mousePos;
 
     void Awake()
@@ -37,8 +37,11 @@ public class PlayerMovement : MonoBehaviour
 
     void ProcessInput()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
+
+        moveDirection = new Vector2(moveHorizontal, moveVertical);
+        moveDirection.Normalize();
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         moveSpeed = baseMoveSpeed + moveSpeedModifier;
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.velocity = moveDirection * moveSpeed;
     }
 
     void Rotate()

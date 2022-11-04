@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barrel : Shootable
+public class Enemy : Entity
 {
     void Start()
     {
