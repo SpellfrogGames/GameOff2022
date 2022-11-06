@@ -26,11 +26,6 @@ public class Bullet : MonoBehaviour
         ImplementStats();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void SetStats(float bulletDamage, float bulletSpeed, float bulletSize, float bulletLifetime, Vector2 direction, bool bulletPiercing)
     {
         _bulletDamage = bulletDamage;

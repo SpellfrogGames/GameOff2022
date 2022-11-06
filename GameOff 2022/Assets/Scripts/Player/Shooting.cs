@@ -26,8 +26,6 @@ public class Shooting : MonoBehaviour
     public float bulletLifetime = 1.0f;
     public bool bulletPiercing;
 
-    //zamysł jest taki, że speed i dmg będą przekazywane do prefaba i ustawiane tam.
-    
     void Awake()
     {
         instance = this;

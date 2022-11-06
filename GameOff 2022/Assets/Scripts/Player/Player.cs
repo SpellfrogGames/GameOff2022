@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : Entity
 {
-    public static PlayerMovement instance;
+    public static Player instance;
 
     [Header("References")]
     public Rigidbody2D rb;
-    public Camera cam;
 
     [Space]
     [Header("Movement Stats")]
@@ -17,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
 
     Vector2 moveDirection;
-    Vector2 mousePos;
 
     void Awake()
     {
@@ -32,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        Rotate();
     }
 
     void ProcessInput()
@@ -42,21 +39,11 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection = new Vector2(moveHorizontal, moveVertical);
         moveDirection.Normalize();
-
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void Move()
     {
         moveSpeed = baseMoveSpeed + moveSpeedModifier;
         rb.velocity = moveDirection * moveSpeed;
-    }
-
-    void Rotate()
-    {
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        
-        rb.rotation = angle;
     }
 }

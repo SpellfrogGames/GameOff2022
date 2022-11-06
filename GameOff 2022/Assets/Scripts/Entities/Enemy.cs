@@ -17,7 +17,6 @@ public class Enemy : Entity
     [Space]
     [Header("References")]
     public Rigidbody2D rb;
-    public Transform playerFindingTarget;
     public Transform attackOrigin;
 
     void Update()
@@ -28,7 +27,7 @@ public class Enemy : Entity
 
     void FindingPlayer()
     {
-        rb.velocity = (playerFindingTarget.position - transform.position) * movementSpeed * Time.fixedDeltaTime;
+        rb.velocity = (Player.instance.transform.position - transform.position) * movementSpeed * Time.fixedDeltaTime;
     }
 
     void Attacking()

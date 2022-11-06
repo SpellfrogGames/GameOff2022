@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  damage: 0
+  damage: 1
   movementSpeed: 20
   whatCanIAttack:
     serializedVersion: 2
@@ -94,7 +94,6 @@ MonoBehaviour:
   secondsBtwAttacks: 1
   attackRange: 0.75
   rb: {fileID: 1931389390011958891}
-  playerFindingTarget: {fileID: 0}
   attackOrigin: {fileID: 6798408988865206872}
 --- !u!1 &1931389390459350072
 GameObject:
@@ -107,7 +106,7 @@ GameObject:
   - component: {fileID: 1931389390459350073}
   - component: {fileID: 1931389390459350070}
   m_Layer: 6
-  m_Name: Circle
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931389390459350072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.106, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -169,8 +168,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.8584906, g: 0.01214843, b: 0.01214843, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 9278e2e8e353b774daf10efcc0feaf35, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
