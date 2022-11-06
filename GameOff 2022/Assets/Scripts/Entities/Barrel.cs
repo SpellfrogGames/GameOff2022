@@ -8,11 +8,6 @@ public class Barrel : Entity
     public LayerMask whatCanIDamage;
     public float explosionRange;
 
-    void Update()
-    {
-        
-    }
-
     public override void Death()
     {
         base.Death();
