@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 8493705}
   - component: {fileID: 8493704}
   - component: {fileID: 8493703}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5, g: 0.34048483, b: 0.08254716, a: 1}
   m_FlipX: 0
@@ -3117,7 +3117,7 @@ GameObject:
   - component: {fileID: 1386900098}
   - component: {fileID: 1386900097}
   - component: {fileID: 1386900096}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3226,7 +3226,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5, g: 0.34048483, b: 0.08254716, a: 1}
   m_FlipX: 0
@@ -3506,7 +3506,7 @@ GameObject:
   - component: {fileID: 1486876442}
   - component: {fileID: 1486876444}
   - component: {fileID: 1486876445}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3553,7 +3553,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5, g: 0.34048483, b: 0.08254716, a: 1}
   m_FlipX: 0
@@ -3842,7 +3842,7 @@ GameObject:
   - component: {fileID: 1712935274}
   - component: {fileID: 1712935273}
   - component: {fileID: 1712935272}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3951,7 +3951,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5, g: 0.34048483, b: 0.08254716, a: 1}
   m_FlipX: 0
@@ -4299,11 +4299,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!212 &2121309663 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8472312505309589328, guid: fe493075fd62a54419115e418353ceaf, type: 3}
-  m_PrefabInstance: {fileID: 9020193298704464494}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1525463557207396142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4429,14 +4424,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8472312505309589328, guid: fe493075fd62a54419115e418353ceaf, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8472312505309589328, guid: fe493075fd62a54419115e418353ceaf, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9020193299234414948, guid: fe493075fd62a54419115e418353ceaf, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4489,9 +4476,5 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 9020193300259236730, guid: fe493075fd62a54419115e418353ceaf, type: 3}
-      propertyPath: gunSprite
-      value: 
-      objectReference: {fileID: 2121309663}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe493075fd62a54419115e418353ceaf, type: 3}

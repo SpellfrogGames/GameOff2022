@@ -54,5 +54,9 @@ public class Bullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        else if(collider.gameObject.layer == 7)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -7,8 +7,6 @@ public class Aim : MonoBehaviour
     public Vector2 mousePos;
     public Camera cam;
 
-    public SpriteRenderer gunSprite;
-
     void Awake()
     {
         cam = Camera.main;
@@ -31,11 +29,11 @@ public class Aim : MonoBehaviour
     {
         if(transform.rotation.z <= 0)
         {
-            gunSprite.flipY = true;
+            transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
         }
         else
         {
-            gunSprite.flipY = false;
+            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
     }
 }
