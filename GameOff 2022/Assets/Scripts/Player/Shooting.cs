@@ -26,6 +26,9 @@ public class Shooting : MonoBehaviour
     public float bulletLifetime = 1.0f;
     public bool bulletPiercing;
 
+    public float secondsBtwAttacks;
+    public float timeBtwAttack;
+
     void Awake()
     {
         instance = this;
@@ -33,13 +36,26 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(timeBtwAttack <= 0)
         {
-            GameObject bulletInstance = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-            Bullet bulletScript = bulletInstance.GetComponent<Bullet>();
-            Vector2 direction = (shootDirection.position - bulletSpawnPoint.position).normalized;
-
-            bulletScript.SetStats(bulletDamage, bulletSpeed, bulletSize, bulletLifetime, direction, bulletPiercing);
+            if(Input.GetButton("Fire1"))
+            {
+                Shoot();
+                timeBtwAttack = secondsBtwAttacks;
+            }
         }
+        else
+        {
+            timeBtwAttack -= Time.deltaTime;
+        }
+    }
+
+    void Shoot()
+    {
+        GameObject bulletInstance = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+        Bullet bulletScript = bulletInstance.GetComponent<Bullet>();
+        Vector2 direction = (shootDirection.position - bulletSpawnPoint.position).normalized;
+
+        bulletScript.SetStats(bulletDamage, bulletSpeed, bulletSize, bulletLifetime, direction, bulletPiercing);
     }
 }

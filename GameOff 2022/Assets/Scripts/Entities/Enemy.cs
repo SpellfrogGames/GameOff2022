@@ -5,7 +5,9 @@ using UnityEngine;
 public class Enemy : Entity
 {
     [Header("Player Finding")]
+    public float baseMovementSpeed;
     public float movementSpeed;
+    public float closeArea;
 
     [Space]
     [Header("Attack")]
@@ -19,6 +21,12 @@ public class Enemy : Entity
     public Rigidbody2D rb;
     public Transform attackOrigin;
 
+    void Start()
+    {
+        GameplayManager.instance.enemies.Add(this.transform);
+        GameplayManager.instance.RefreshEnemiesCount();
+    }
+
     void Update()
     {
         FindingPlayer();
@@ -27,7 +35,19 @@ public class Enemy : Entity
 
     void FindingPlayer()
     {
-        rb.velocity = (Player.instance.transform.position - transform.position) * movementSpeed * Time.fixedDeltaTime;
+        if(Player.instance)
+        {
+            if(Vector2.Distance(transform.position, Player.instance.transform.position) > closeArea)
+            {
+                movementSpeed = baseMovementSpeed * 2; 
+            }
+            else
+            {
+                movementSpeed = baseMovementSpeed;
+            }
+            
+            rb.velocity = (Player.instance.transform.position - transform.position).normalized * movementSpeed * Time.fixedDeltaTime;
+        }
     }
 
     void Attacking()
@@ -54,7 +74,9 @@ public class Enemy : Entity
     
     public override void Death()
     {
+        GameplayManager.instance.enemies.Remove(this.gameObject.transform);
         base.Death();
+        GameplayManager.instance.RefreshEnemiesCount();
     }
 
     void OnDrawGizmosSelected()
