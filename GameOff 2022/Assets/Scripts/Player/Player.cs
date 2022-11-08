@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Entity
 {
     public static Player instance;
+    Vector2 moveDirection;
 
     [Header("References")]
     public Rigidbody2D rb;
@@ -15,7 +16,11 @@ public class Player : Entity
     public float moveSpeedModifier = 0.0f;
     public float moveSpeed;
 
-    Vector2 moveDirection;
+    [Space]
+    [Header("Leveling")]
+    public int playerExp;
+    public int playerLevel;
+    public int[] levels;
 
     void Awake()
     {
@@ -45,5 +50,22 @@ public class Player : Entity
     {
         moveSpeed = baseMoveSpeed + moveSpeedModifier;
         rb.velocity = moveDirection * moveSpeed;
+    }
+
+    public void ExperienceCheck()
+    {
+        for(int i = playerLevel; i<levels.Length; i++)
+        {
+            if(playerExp == levels[i])
+            {
+                LevelUp();
+            }
+        }
+    }
+
+    void LevelUp()
+    {
+        playerLevel++;
+        Debug.Log("Congrats! You've reached level: " + playerLevel);
     }
 }
