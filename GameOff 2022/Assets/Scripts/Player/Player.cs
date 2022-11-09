@@ -67,5 +67,6 @@ public class Player : Entity
     {
         playerLevel++;
         Debug.Log("Congrats! You've reached level: " + playerLevel);
+        UiManager.instance.OpenUpgradeMenu();
     }
 }
